@@ -11,7 +11,7 @@ PS: some instructions were not super clear, so I have made some assumptions.
 1. Clone the repo
 2. There are two directories, one for `backend` and one for `frontend`.
 3. First go to the `backend` directory and install the dependencies with `python3 -m pip install -r requirements.txt`
-4. Run the backend application with `flask --app flasker run --port 5001`
+4. Run the backend application with `flask --app flaskr run --port 5001`
 5. You can test the endpoints with the following endpoints:
    - Metric A (GET): http://localhost:5001/api/country/{ISO3}/{date_start}/{date_end}/metricA
    - Metrid B (GET): http://localhost:5001/api/country/{ISO3}/{date_start}/{date_end}/metricB
