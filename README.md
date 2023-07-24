@@ -15,7 +15,6 @@ PS: some instructions were not super clear, so I have made some assumptions.
 5. You can test the endpoints with the following endpoints:
    - Metric A (GET): http://localhost:5001/api/country/{ISO3}/{date_start}/{date_end}/metricA
    - Metric B (GET): http://localhost:5001/api/country/{ISO3}/{date_start}/{date_end}/metricB
-   - Variance (GET): http://localhost:5001/api/country/{ISO3}/{date_start}/{date_end}/variance
 6. You can also use the frontend to navigate through these endpoints.
 7. In a different terminal, go to the `frontend` directory and install dependencies with `yarn install` or `npm install`.
 8. Run the frontend application with `yarn dev` or `npm run dev`.

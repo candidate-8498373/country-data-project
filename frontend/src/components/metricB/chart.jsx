@@ -6,7 +6,7 @@ import dayjs from 'dayjs'
 const dateTypes = ['Daily', 'Monthly']
 const colors = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink', 'brown', 'black', 'gray']
 
-const MetricBChart = ({ data }) => {
+const MetricBChart = ({ data, setUseLocal, useLocal }) => {
   const [dateType, setDateType] = useState(dateTypes[0])
   const [chartData, setChartData] = useState(null)
 
@@ -40,6 +40,7 @@ const MetricBChart = ({ data }) => {
         }
         return acc
       }, [])
+
       const countries = data.reduce((acc, obj) => {
         if (!acc.find(k => k.iso3 === obj.country.iso3)) {
           acc.push(obj.country)
@@ -72,13 +73,13 @@ const MetricBChart = ({ data }) => {
     <div>
       <div className="form text-end">
         <select
-          name="dateType"
-          id="dateType"
-          onChange={(e) => setDateType(e.target.value)}
-          value={dateType}
+          name="useLocal"
+          id="useLocal"
+          onChange={(e) => setUseLocal(e.target.value === 'true' ? true : false)}
+          value={useLocal}
           className="form-select"
         >
-          {dateTypes.map((k, i) => <option key={i} value={k}>Freq. {k}</option>)}
+          {['true', 'false'].map((k, i) => <option key={i} value={k}>{k === 'true' ? 'Use Local data' : 'Use API data'}</option>)}
         </select>
       </div>
       <LineChart data={chartData} options={options} />
@@ -89,5 +90,7 @@ const MetricBChart = ({ data }) => {
 export default MetricBChart
 
 MetricBChart.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  setUseLocal: PropTypes.func.isRequired,
+  useLocal: PropTypes.bool.isRequired
 }

@@ -37,6 +37,7 @@ function App() {
         revalidateOnFocus: false,
         revalidateOnReconnect: false,
         refreshInterval: 0,
+        keepPreviousData: false,
         fetcher,
       }}>
       <RouterProvider router={router} />
