@@ -25,3 +25,4 @@ PS: some instructions were not super clear, so I have made some assumptions.
 - For the backend I chose to use Flask, as it is a very simple framework to create a REST APIs.
 - For the frontend I chose to use React, which is the library I am most familiar with.
 - Please note that normally I would use a framework like NextJS for the frontend, to leverage the benefits of server-side rendering. However, due to simplicity of the project I chose to use plain React with Vite.
+- During development there were issues accessing the API, so I made a local version and you can toggle that in the frontend in case it is needed.
